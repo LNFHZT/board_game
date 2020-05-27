@@ -4,8 +4,8 @@
   "description": "",
   "main": "/dist/app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "serve": "nodemon --watch ./source/* -e ts --exec ts-node ./source/app.ts"
+    "test": "ts-jest",
+    "serve": "nodemon --watch ./source/* -e ts --exec ts-node --files ./source/app.ts"
   },
   "author": "",
   "license": "ISC",
@@ -20,8 +20,11 @@
     "typeorm": "^0.2.25"
   },
   "devDependencies": {
+    "@types/jest": "^25.2.3",
     "@types/koa": "^2.11.3",
+    "jest": "^26.0.1",
     "nodemon": "^2.0.4",
+    "ts-jest": "^26.0.0",
     "ts-node": "^8.10.1",
     "typescript": "^3.9.3"
   }

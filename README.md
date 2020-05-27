@@ -1,7 +1,28 @@
 ## 桌游系统
 
-### 项目结构
+### 前言
 
+### 技术栈
+node + koa + typescript + typeORM + mysql
+
+### 项目结构
+```
+board_game    
+ ┣ doc                          文档目录
+ ┃ ┗ database                   数据库设计文档
+ ┃ ┃ ┗ table.md
+ ┣ source                       源码
+ ┃ ┣ controller                 控制器层
+ ┃ ┣ dao                        连接数据库 接口层
+ ┃ ┣ entity                     实体
+ ┃ ┣ plugins                    插件
+ ┃ ┃ ┣ decorator                自定义修饰器方法
+ ┃ ┃ ┣ global                   定义全局方法/变量
+ ┃ ┃ ┣ middleware               中间件
+ ┃ ┣ service                    服务层
+ ┃ ┗ app.ts                     主入口文件
+ ┗ types                        类型定义文件
+ ```
 ### 项目运行
 ```
 <!-- 安装依赖 -->
@@ -13,8 +34,58 @@ cnpm i
 npm run serve 
 
 ```
-
 ### 项目说明
+项目基于koa进行封装实现mvc模式的架构。  
+1.dao 层
+```
+@Repository('userDAO')
+export default class UserDAO {
+    public addUser (user: User): number{
+        return ;
+    }
+}
+```
+2.service层
+```
+@Service('userService')
+export default class UserService {
+
+    @Resource('userDAO')
+    private userDAO!: UserDAO;
+
+    public addUser (user: User): number{
+        return this.userDAO.addUser(user);
+    }
+}
+```
+3.controller层
+```
+@Controller('/user', [timeCounter])
+export default class UserController {
+
+    @Resource('userService')
+    private userService!: UserService;
+
+    @RequestMapping({path: '/get/:id', method: 'get'})
+    public async getUser (@PathVariable('id') userId: number){
+        return this.userService.getUser(userId);
+    }
+}
+
+```
+entity 连接数据是使用typeORM 所以需要建立实体，通过typeORM 来建立实体
+```
+@Entity()
+export default class User {
+  @PrimaryGeneratedColumn()
+  userId: number;
+  @Column()
+  account: string;
+}
+```
+
+
+### 项目注意
 因为项目连接数据是使用 typeORM 所以需要创建 连接数据的配置文件 ormconfig.json
 ```
 {
@@ -40,3 +111,4 @@ npm i tslib@1.11.2 --save
 <!-- 修改package.json "tslib": "^1.11.2" 改为  "tslib": "1.11.2" -->
 <!-- 删除 node_modules 非1.11.2 版本的 tslib -->
 ```
+
