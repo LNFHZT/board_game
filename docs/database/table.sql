@@ -5,7 +5,7 @@ create table user(
     headPortrait varchr(100) null ,
     createTime bigint not null,
     updateTime bigint not null,
-    state int not null default 0
+    state int not null default 0  
 );
 comment on table user is '用户表';
 comment on column user.userId is '用户id';
