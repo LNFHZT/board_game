@@ -5,7 +5,7 @@
   "main": "/dist/app.js",
   "scripts": {
     "test": "ts-jest",
-    "log": "npx conventional-changelog -p angular -i ./docs/changelog/CHANGELOG.md -w -r 0",
+    "log": "npx conventional-changelog -p jquery  -i ./docs/changelog/CHANGELOG.md -w -r 0",
     "serve": "nodemon --watch ./source/* -e ts --exec ts-node --files ./source/app.ts"
   },
   "author": "",
