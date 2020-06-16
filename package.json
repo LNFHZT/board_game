@@ -1,7 +1,7 @@
 {
   "name": "board_game",
   "version": "0.0.1",
-  "description": "",
+  "description": "### 前言",
   "main": "/dist/app.js",
   "scripts": {
     "test": "ts-jest",
@@ -20,12 +20,31 @@
     "typeorm": "^0.2.25"
   },
   "devDependencies": {
+    "@commitlint/cli": "^8.3.5",
     "@types/jest": "^25.2.3",
     "@types/koa": "^2.11.3",
+    "cz-conventional-changelog": "^3.2.0",
     "jest": "^26.0.1",
     "nodemon": "^2.0.4",
     "ts-jest": "^26.0.0",
     "ts-node": "^8.10.1",
     "typescript": "^3.9.3"
-  }
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "directories": {
+    "doc": "doc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LNFHZT/board_game.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/LNFHZT/board_game/issues"
+  },
+  "homepage": "https://github.com/LNFHZT/board_game#readme"
 }
