@@ -34,6 +34,15 @@ cnpm i
 npm run serve 
 
 ```
+### 项目开发
+开发代码提交时做了[git commit](./docs/changelog/operation.md) 规范限制 所以需要安装下面几个全局依赖  
+详细说明可进[docs/changelog/operation.md](./docs/changelog/operation.md)
+```
+<!-- 所需全局依赖 -->
+npm i -g commitizen conventional-changelog conventional-changelog-cli
+<!-- 或者 -->
+cnpm i -g commitizen conventional-changelog conventional-changelog-cli
+```
 ### 项目说明
 项目基于koa进行封装实现mvc模式的架构。  
 1.dao 层
@@ -112,3 +121,4 @@ npm i tslib@1.11.2 --save
 <!-- 删除 node_modules 非1.11.2 版本的 tslib -->
 ```
 
+### [changelog](./docs/changelog/CHANGELOG.md)
