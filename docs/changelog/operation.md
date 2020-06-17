@@ -53,4 +53,5 @@ Footer 部分只用于两种情况。
 ```
 npm run log
 ```
-日志生成将依赖于git所打的标签来划分，即 git tag 
+日志生成将依赖于git所打的标签来划分阶段，即 git tag  
+日志生成的版本号是依赖于package.json 的version

@@ -1,6 +1,6 @@
 {
   "name": "board_game",
-  "version": "0.0.6",
+  "version": "0.0.1",
   "description": "### 前言",
   "main": "/dist/app.js",
   "scripts": {
